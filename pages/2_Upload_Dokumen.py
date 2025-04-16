@@ -62,3 +62,17 @@ if uploaded_file:
             json.dump(metadata, f, indent=2)
 
         st.success(f"✅ Dokumen `{final_filename}` berhasil diunggah dan metadata disimpan.")
+
+        # Proses dokumen ke vectorstore
+        with st.spinner("🔍 Memproses dan menyimpan ke vectorstore..."):
+            try:
+                rag_engine = st.session_state.get("rag_engine")
+                if not rag_engine:
+                    st.error("Engine tidak ditemukan di session.")
+                else:
+                    num_chunks = rag_engine.load_and_index_documents("railway_docs")
+                    st.session_state.db_initialized = True
+                    st.success(f"📚 Dokumen berhasil diproses dan disimpan ke vectorstore dalam {num_chunks} chunk.")
+            except Exception as e:
+                st.error(f"❌ Gagal indexing dokumen ke vectorstore: {e}")
+

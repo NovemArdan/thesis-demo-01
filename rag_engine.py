@@ -1,11 +1,11 @@
 import os
-import re
 import shutil
+import json
 from typing import List, Dict, Any, Optional
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import TextLoader, DirectoryLoader, PyPDFLoader
+from langchain.document_loaders import TextLoader, PyPDFLoader
 from langchain.docstore.document import Document
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
@@ -13,8 +13,6 @@ from langchain.prompts import ChatPromptTemplate
 
 
 class RAGEngine:
-    """Retrieval Augmented Generation engine for railway knowledge management."""
-
     def __init__(
         self,
         persist_directory: str = "./chroma_db",
@@ -62,15 +60,13 @@ class RAGEngine:
         self._initialize_qa_chain()
 
     def _initialize_vectorstore(self):
-        if self.use_in_memory:
-            self.vectorstore = Chroma(embedding_function=self.embeddings)
-        else:
-            if self.reset_db and os.path.exists(self.persist_directory):
-                shutil.rmtree(self.persist_directory)
-            self.vectorstore = Chroma(
-                embedding_function=self.embeddings,
-                persist_directory=self.persist_directory
-            )
+        if self.reset_db and self.persist_directory and os.path.exists(self.persist_directory):
+            shutil.rmtree(self.persist_directory)
+
+        self.vectorstore = Chroma(
+            embedding_function=self.embeddings,
+            persist_directory=self.persist_directory
+        )
 
     def _initialize_qa_chain(self):
         retriever = self.vectorstore.as_retriever(
@@ -86,51 +82,32 @@ class RAGEngine:
         )
 
     def load_documents(self, directory: str) -> List[Document]:
-        """Load PDF or TXT documents, then extract per Pasal for PDF."""
-        docs: List[Document] = []
+        docs = []
         for root, _, files in os.walk(directory):
             for file in files:
                 path = os.path.join(root, file)
                 if file.endswith(".pdf"):
                     loader = PyPDFLoader(path)
-                    raw_pages = loader.load()
-                    full_text = "\n".join([p.page_content for p in raw_pages])
-                    pasal_docs = self._split_by_pasal(full_text, file)
-                    docs.extend(pasal_docs)
+                    pages = loader.load()
+                    for i, page in enumerate(pages):
+                        page.metadata["source_file"] = file
+                        page.metadata["page"] = str(i + 1)
+                    docs.extend(pages)
                 elif file.endswith(".txt"):
                     loader = TextLoader(path, encoding="utf-8")
-                    loaded = loader.load()
-                    for doc in loaded:
+                    text_docs = loader.load()
+                    for doc in text_docs:
                         doc.metadata["source_file"] = file
                         doc.metadata["page"] = "1"
-                    docs.extend(loaded)
-        return docs
-
-    def _split_by_pasal(self, text: str, filename: str) -> List[Document]:
-        """Pisahkan dokumen berdasarkan 'Pasal X' untuk legal documents."""
-        pasal_blocks = re.split(r"(?=Pasal\s+\d+)", text, flags=re.IGNORECASE)
-        docs = []
-        for block in pasal_blocks:
-            match = re.match(r"Pasal\s+(\d+)", block)
-            if match:
-                pasal_number = match.group(1)
-                doc = Document(
-                    page_content=block.strip(),
-                    metadata={
-                        "source_file": filename,
-                        "page": f"Pasal {pasal_number}",
-                        "pasal_number": pasal_number
-                    }
-                )
-                docs.append(doc)
+                    docs.extend(text_docs)
         return docs
 
     def process_documents(self, documents: List[Document]) -> List[Document]:
         chunks = self.text_splitter.split_documents(documents)
-        for chunk in chunks:
+        for i, chunk in enumerate(chunks):
             chunk.metadata["chunk"] = chunk.page_content[:100]
-            if "page" not in chunk.metadata:
-                chunk.metadata["page"] = "N/A"
+            chunk.metadata["page"] = chunk.metadata.get("page", "N/A")
+            chunk.metadata["chunk_id"] = f"{chunk.metadata.get('source_file', 'unknown')}_{i}"
         return chunks
 
     def index_documents(self, documents: List[Document]) -> None:
@@ -141,6 +118,21 @@ class RAGEngine:
     def load_and_index_documents(self, directory: str) -> int:
         docs = self.load_documents(directory)
         chunks = self.process_documents(docs)
+
+        # Tambahkan metadata dari .meta.json jika ada
+        for chunk in chunks:
+            filename = chunk.metadata.get("source_file")
+            meta_path = os.path.join(directory, filename + ".meta.json")
+            if os.path.exists(meta_path):
+                with open(meta_path, "r") as f:
+                    meta = json.load(f)
+                chunk.metadata.update({
+                    "upload_by": meta.get("upload_by", ""),
+                    "upload_at": meta.get("upload_at", ""),
+                    "jenis_dokumen": meta.get("jenis_dokumen", ""),
+                    "deskripsi": meta.get("deskripsi", "")
+                })
+
         self.index_documents(chunks)
         return len(chunks)
 
@@ -148,27 +140,40 @@ class RAGEngine:
         result = self.qa_chain({"query": query})
         formatted_sources = []
         for doc in result.get("source_documents", []):
-            source_info = {
+            formatted_sources.append({
                 "file": doc.metadata.get("source_file", "Unknown"),
                 "page": doc.metadata.get("page", "N/A"),
-                "pasal": doc.metadata.get("pasal_number", "-"),
+                "chunk_id": doc.metadata.get("chunk_id", "-"),
                 "chunk_preview": doc.metadata.get("chunk", "")[:100]
-            }
-            formatted_sources.append(source_info)
+            })
         result["formatted_sources"] = formatted_sources
         return result
 
     def get_source_info(self, result: Dict[str, Any]) -> List[Dict[str, str]]:
         sources = []
         for doc in result.get("source_documents", []):
-            source = {
+            sources.append({
                 "source_file": doc.metadata.get("source_file", "Unknown"),
                 "page": doc.metadata.get("page", "N/A"),
-                "pasal": doc.metadata.get("pasal_number", "-"),
+                "chunk_id": doc.metadata.get("chunk_id", "-"),
                 "chunk": doc.metadata.get("chunk", "")[:100]
-            }
-            sources.append(source)
+            })
         return sources
 
     def get_indexed_documents(self):
-        return self.retriever.vectorstore.get()['documents']
+        return self.vectorstore.get()['documents']
+
+    def list_indexed_files(self) -> List[str]:
+        """Mengembalikan daftar nama file (source_file) yang telah diindeks ke vectorstore."""
+        data = self.vectorstore.get()
+        filenames = set()
+        for meta in data.get("metadatas", []):
+            if "source_file" in meta:
+                filenames.add(meta["source_file"])
+        return sorted(filenames)
+
+    def delete_document(self, filename: str):
+        try:
+            self.vectorstore.delete(filter={"source_file": filename})
+        except Exception as e:
+            raise RuntimeError(f"Gagal menghapus dari vectorstore: {e}")

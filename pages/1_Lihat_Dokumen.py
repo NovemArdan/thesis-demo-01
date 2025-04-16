@@ -2,10 +2,15 @@ import streamlit as st
 import os
 import json
 
-# Cek login
+# # Cek login
+# if not st.session_state.get("logged_in"):
+#     st.experimental_set_query_params(page="login")
+#     st.rerun()
+
+# Cek login dengan struktur yang aman dari rekursi
 if not st.session_state.get("logged_in"):
-    st.experimental_set_query_params(page="login")
-    st.rerun()
+    st.warning("Anda harus login terlebih dahulu")
+    st.stop()  # Gunakan st.stop() alih-alih st.rerun()
 
 st.title("📄 Daftar Dokumen yang Diupload")
 
@@ -100,5 +105,23 @@ else:
                         json.dump(metadata, f, indent=2)
                     st.success("Metadata berhasil diperbarui.")
                     st.rerun()
+            with st.expander("🗑️ Hapus Dokumen"):
+                confirm = st.checkbox(f"Saya yakin ingin menghapus dokumen `{filename}`", key=f"confirm_{filename}")
+                if confirm:
+                    if st.button(f"❌ Hapus Permanen - {filename}", key=f"delete_{filename}"):
+                        try:
+                            os.remove(file_path)
+                            if os.path.exists(meta_path):
+                                os.remove(meta_path)
+
+                            # Hapus dari vectorstore
+                            rag_engine = st.session_state.get("rag_engine")
+                            if rag_engine:
+                                rag_engine.delete_document(filename)
+
+                            st.success(f"✅ Dokumen `{filename}` berhasil dihapus beserta data vector-nya.")
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"❌ Gagal menghapus dokumen: {e}")
 
         st.divider()
