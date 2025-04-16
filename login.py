@@ -7,13 +7,12 @@ def login_page():
     create_user_table()
     init_dummy_users()
 
-    # Pilihan akun dummy
     akun_preset = {
         "Admin (admin)": ("admin", "admin123"),
         "User (user01)": ("user01", "user01123")
     }
 
-    akun_pilihan = st.selectbox("Pilih akun untuk login cepat", list(akun_preset.keys()))
+    akun_pilihan = st.selectbox("Pilih akun", list(akun_preset.keys()))
     username, password = akun_preset[akun_pilihan]
 
     st.text_input("Username", value=username, disabled=True)
@@ -26,6 +25,6 @@ def login_page():
             st.session_state.username = username
             st.session_state.role = user[0]
             st.success(f"Login berhasil sebagai {user[0]}")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Username/password salah")

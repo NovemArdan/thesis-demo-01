@@ -33,7 +33,7 @@ def add_user(username, password, role):
         conn.commit()
         conn.close()
     except sqlite3.IntegrityError:
-        pass  # Supaya tidak error kalau user sudah ada
+        pass
 
 def authenticate_user(username, password):
     conn = get_conn()
@@ -45,6 +45,5 @@ def authenticate_user(username, password):
     return data
 
 def init_dummy_users():
-    # Tambahkan user dummy hanya jika belum ada
     add_user("admin", "admin123", "admin")
     add_user("user01", "user01123", "user")

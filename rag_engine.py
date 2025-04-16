@@ -169,3 +169,6 @@ class RAGEngine:
             }
             sources.append(source)
         return sources
+
+    def get_indexed_documents(self):
+        return self.retriever.vectorstore.get()['documents']

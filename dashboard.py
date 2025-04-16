@@ -43,7 +43,7 @@ def dashboard_main():
             st.session_state.logged_in = False
             st.session_state.username = ""
             st.session_state.role = ""
-            st.experimental_rerun()  # Kembali ke halaman login
+            st.rerun()  # Kembali ke halaman login
 
         if st.session_state["role"] == "admin":
             st.subheader("Upload Dokumen")
