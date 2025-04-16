@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import json
 
 # Cek login
 if not st.session_state.get("logged_in"):
@@ -20,24 +21,84 @@ with st.sidebar:
 
 # Folder dokumen
 docs_folder = "railway_docs"
-
 if not os.path.exists(docs_folder):
     st.warning("📭 Belum ada dokumen yang diupload.")
-else:
-    file_list = os.listdir(docs_folder)
-    if not file_list:
-        st.info("📭 Folder kosong. Belum ada file.")
-    else:
-        for i, filename in enumerate(sorted(file_list), 1):
-            file_path = os.path.join(docs_folder, filename)
-            file_size_kb = os.path.getsize(file_path) / 1024  # in KB
+    st.stop()
 
-            with open(file_path, "rb") as file_data:
-                st.markdown(f"**{i}.** `{filename}`  \n💾 {file_size_kb:.2f} KB")
-                st.download_button(
-                    label="⬇️ Download",
-                    data=file_data,
-                    file_name=filename,
-                    mime="application/octet-stream"
-                )
-            st.divider()
+all_files = sorted([f for f in os.listdir(docs_folder) if not f.endswith(".meta.json")])
+if not all_files:
+    st.info("📭 Folder kosong. Belum ada file.")
+    st.stop()
+
+# ============================
+# 🔍 FILTER UI
+# ============================
+st.subheader("🔎 Filter Dokumen")
+
+# Kolom pencarian
+search_query = st.text_input("Cari nama/deskripsi dokumen:")
+
+# Dropdown jenis dokumen
+jenis_opsi = ["Semua", "Umum", "Rahasia", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8"]
+filter_jenis = st.selectbox("Filter berdasarkan jenis dokumen:", jenis_opsi)
+
+# ============================
+# 🔍 FILTERING FILE LIST
+# ============================
+filtered_files = []
+
+for filename in all_files:
+    file_path = os.path.join(docs_folder, filename)
+    meta_path = file_path + ".meta.json"
+    metadata = {}
+
+    if os.path.exists(meta_path):
+        with open(meta_path, "r") as f:
+            metadata = json.load(f)
+
+    # Cek search (pada nama file & deskripsi)
+    match_search = search_query.lower() in filename.lower() or search_query.lower() in metadata.get("deskripsi", "").lower()
+
+    # Cek jenis dokumen
+    match_jenis = filter_jenis == "Semua" or metadata.get("jenis_dokumen") == filter_jenis
+
+    if match_search and match_jenis:
+        filtered_files.append((filename, metadata))
+
+# ============================
+# ⬇️ TAMPILKAN FILE YANG LOLOS FILTER
+# ============================
+
+if not filtered_files:
+    st.info("Tidak ada dokumen yang cocok dengan filter.")
+else:
+    for i, (filename, metadata) in enumerate(filtered_files, 1):
+        file_path = os.path.join(docs_folder, filename)
+        file_size_kb = os.path.getsize(file_path) / 1024
+
+        st.markdown(f"### {i}. `{filename}`")
+        st.markdown(f"💾 Ukuran: **{file_size_kb:.2f} KB**")
+        st.markdown(f"🕒 Tanggal Upload: `{metadata.get('upload_at', '-')}`")
+        st.markdown(f"👤 Diunggah oleh: `{metadata.get('upload_by', '-')}`")
+        st.markdown(f"📂 Jenis Dokumen: `{metadata.get('jenis_dokumen', '-')}`")
+        st.markdown(f"📝 Deskripsi:\n{metadata.get('deskripsi', '-')}")
+
+        with open(file_path, "rb") as f:
+            st.download_button("⬇️ Download File", data=f, file_name=filename)
+
+        # Edit Metadata (khusus admin)
+        if st.session_state.get("role") == "admin":
+            with st.expander("✏️ Edit Metadata"):
+                jenis_opsi_only = jenis_opsi[1:]  # buang "Semua"
+                jenis_idx = jenis_opsi_only.index(metadata.get("jenis_dokumen", "Umum")) if metadata.get("jenis_dokumen", "Umum") in jenis_opsi_only else 0
+                new_jenis = st.selectbox("Jenis Dokumen", jenis_opsi_only, index=jenis_idx, key=f"jenis_{filename}")
+                new_deskripsi = st.text_area("Deskripsi", metadata.get("deskripsi", ""), key=f"desc_{filename}")
+                if st.button(f"💾 Simpan Metadata - {filename}", key=f"simpan_{filename}"):
+                    metadata["jenis_dokumen"] = new_jenis
+                    metadata["deskripsi"] = new_deskripsi
+                    with open(meta_path, "w") as f:
+                        json.dump(metadata, f, indent=2)
+                    st.success("Metadata berhasil diperbarui.")
+                    st.rerun()
+
+        st.divider()

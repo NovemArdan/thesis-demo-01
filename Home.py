@@ -39,7 +39,7 @@ if "db_initialized" not in st.session_state:
 
 # Konten halaman utama
 st.title("🏠 Beranda")
-st.markdown("Selamat datang di sistem Knowledge Management Perkeretaapian.")
+st.markdown("Selamat datang di Knowledge Management System Perkeretaapian PT Kereta Api Indonesia (Persero)")
 
 with st.sidebar:
     st.markdown(f"**Akun:** `{st.session_state.get('username', '')}`")

@@ -1,5 +1,7 @@
 import streamlit as st
 import os
+import json
+from datetime import datetime
 
 # Cek login
 if not st.session_state.get("logged_in"):
@@ -13,7 +15,7 @@ if st.session_state.get("role") != "admin":
 
 st.title("📤 Upload Dokumen Perkeretaapian")
 
-# Tombol Logout
+# Sidebar Logout
 with st.sidebar:
     username = st.session_state.get("username", "Tidak diketahui")
     st.markdown(f"**Akun:** `{username}`")
@@ -24,31 +26,39 @@ with st.sidebar:
         st.rerun()
 
 # Upload dokumen
-uploaded_files = st.file_uploader(
-    "📁 Pilih dokumen PDF atau TXT untuk diunggah",
-    type=["pdf", "txt"],
-    accept_multiple_files=True
-)
+uploaded_file = st.file_uploader("📁 Pilih dokumen PDF atau TXT", type=["pdf", "txt"])
 
-if uploaded_files:
-    if not os.path.exists("railway_docs"):
-        os.makedirs("railway_docs")
+if uploaded_file:
+    st.subheader("📄 Form Metadata Dokumen")
 
-    for file in uploaded_files:
-        with open(f"railway_docs/{file.name}", "wb") as f:
-            f.write(file.getbuffer())
-    st.success(f"{len(uploaded_files)} dokumen berhasil diunggah.")
+    # Gunakan nama asli, tapi bisa ubah
+    file_ext = uploaded_file.name.split(".")[-1]
+    default_name = ".".join(uploaded_file.name.split(".")[:-1])
+    final_name = st.text_input("Nama File (tanpa ekstensi)", value=default_name)
 
-# Tombol proses dokumen ke RAG
-if st.button("🚀 Proses & Index Dokumen"):
-    rag_engine = st.session_state.get("rag_engine")
-    if rag_engine is None:
-        st.error("❌ RAGEngine belum diinisialisasi.")
-    else:
-        with st.spinner("🔄 Memproses dokumen dan membangun indeks..."):
-            try:
-                chunks = rag_engine.load_and_index_documents("railway_docs")
-                st.session_state.db_initialized = True
-                st.success(f"✅ Berhasil mengindeks {chunks} potongan teks.")
-            except Exception as e:
-                st.error(f"❌ Gagal memproses dokumen: {str(e)}")
+    jenis_dokumen = st.selectbox("Jenis Dokumen", ["Umum", "Rahasia", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8"])
+    deskripsi = st.text_area("Deskripsi Dokumen", placeholder="Masukkan deskripsi dokumen...")
+
+    if st.button("✅ Simpan Dokumen dan Metadata"):
+        # Siapkan folder
+        if not os.path.exists("railway_docs"):
+            os.makedirs("railway_docs")
+
+        # Simpan file dan metadata
+        final_filename = f"{final_name}.{file_ext}"
+        filepath = os.path.join("railway_docs", final_filename)
+
+        with open(filepath, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        metadata = {
+            "filename": final_filename,
+            "upload_by": st.session_state.get("username", ""),
+            "upload_at": datetime.now().isoformat(),
+            "jenis_dokumen": jenis_dokumen,
+            "deskripsi": deskripsi
+        }
+        with open(filepath + ".meta.json", "w") as f:
+            json.dump(metadata, f, indent=2)
+
+        st.success(f"✅ Dokumen `{final_filename}` berhasil diunggah dan metadata disimpan.")
