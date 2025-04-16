@@ -1,0 +1,49 @@
+name: Test Railway RAG Application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+    
+    - name: Create test directories
+      run: |
+        mkdir -p railway_docs
+        mkdir -p test_data
+        echo "Test document content for railway systems." > test_data/test_doc.txt
+    
+    - name: Run unit tests
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        # Skip OpenAI API tests if no key is provided
+        if [ -z "$OPENAI_API_KEY" ]; then
+          echo "OPENAI_API_KEY not set. Skipping tests that require OpenAI API."
+          pytest tests/ -k "not test_query" --cov=./ --cov-report=xml
+        else
+          pytest tests/ --cov=./ --cov-report=xml
+        fi
+    
+    - name: Upload coverage report
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        fail_ci_if_error: false

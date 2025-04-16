@@ -1,0 +1,11 @@
+streamlit==1.27.0
+langchain==0.0.267
+openai==0.28.0
+chromadb==0.4.13
+sentence-transformers==2.2.2
+python-dotenv==1.0.0
+tiktoken==0.5.1
+pytest==7.4.2
+pytest-cov==4.1.0
+pypdf==3.16.2
+unstructured[pdf]
