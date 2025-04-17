@@ -1,6 +1,8 @@
 import streamlit as st
 from datetime import datetime
 import os
+import json
+
 
 # Import your RAG engine from the appropriate module
 # from rag_engine import RAGEngine  # Uncomment and adjust the import path
@@ -22,6 +24,29 @@ if "rag_engine" not in st.session_state:
 if not st.session_state.get("logged_in"):
     st.experimental_set_query_params(page="login")
     st.stop()
+
+def simpan_chat_ke_file(entry, username):
+    import json
+    os.makedirs("chat_logs", exist_ok=True)
+    tanggal = datetime.now().strftime("%Y-%m-%d")
+    filename = f"chat_logs/{username}_{tanggal}.json"
+
+    history = []
+    if os.path.exists(filename):
+        try:
+            with open(filename, "r") as f:
+                content = f.read().strip()
+                if content:
+                    history = json.loads(content)
+        except Exception as e:
+            print(f"❌ Gagal membaca file JSON lama: {e}")
+            history = []
+
+    history.append(entry)
+
+    with open(filename, "w") as f:
+        json.dump(history, f, indent=2)
+
 
 # Tombol Logout
 with st.sidebar:
@@ -96,55 +121,62 @@ for chat in st.session_state.chat_history:
 # Input pengguna
 query = st.chat_input("Tanyakan sesuatu berdasarkan dokumen...")
 
-# Proses pertanyaan
 if query:
-    # Add user message to chat
+    timestamp = datetime.now().isoformat()
+    username = st.session_state.get("username", "anon")
+
     with st.chat_message("user"):
         st.markdown(query)
     st.session_state.chat_history.append({"role": "user", "message": query})
 
-    # Process with RAG engine and display response
     with st.chat_message("assistant"):
         with st.spinner("🔍 Mencari jawaban dari dokumen..."):
             try:
                 rag = st.session_state.get("rag_engine")
                 if not rag:
                     raise ValueError("RAG Engine tidak tersedia")
-                
-                # Execute query
+
                 response = rag.query(query, debug=True)
-                
-                # Extract and display results
-                if "result" in response:
-                    answer_text = response["result"]
-                    st.markdown(answer_text)
-                    
-                    # Save to history
-                    st.session_state.chat_history.append({
-                        "role": "assistant", 
-                        "message": answer_text
-                    })
-                    
-                    # Display sources if available
-                    formatted_sources = response.get("formatted_sources", [])
-                    if formatted_sources:
-                        st.session_state.last_sources = formatted_sources
-                        with st.expander("Sumber Referensi"):
-                            for i, src in enumerate(formatted_sources):
-                                st.markdown(f"**{i+1}. {src['file']}** (Halaman {src['page']}) - Skor: {src['score']}")
-                                st.text(src['chunk_preview'] + "...")
-                                st.divider()
-                else:
-                    st.error("Respons tidak valid")
-                    st.session_state.chat_history.append({
-                        "role": "assistant", 
-                        "message": "Maaf, tidak dapat menghasilkan respons yang valid."
-                    })
-                    
+                answer_text = response.get("result", "Maaf, tidak dapat memberikan jawaban.")
+                st.markdown(answer_text)
+
+                # Tampilkan dan simpan sumber jika ada
+                formatted_sources = response.get("formatted_sources", [])
+                st.session_state.last_sources = formatted_sources
+
+                if formatted_sources:
+                    with st.expander("Sumber Referensi"):
+                        for i, src in enumerate(formatted_sources):
+                            st.markdown(f"**{i+1}. {src['file']}** (Halaman {src['page']}) - Skor: {src['score']}")
+                            st.text(src['chunk_preview'] + "...")
+                            st.divider()
+
+                st.session_state.chat_history.append({
+                    "role": "assistant",
+                    "message": answer_text
+                })
+
+                # ⏺️ Simpan log ke file
+                simpan_chat_ke_file({
+                    "timestamp": timestamp,
+                    "username": username,
+                    "query": query,
+                    "response": answer_text,
+                    "sources": formatted_sources
+                }, username)
+
             except Exception as e:
                 error_msg = f"Terjadi kesalahan: {str(e)}"
                 st.error(error_msg)
                 st.session_state.chat_history.append({
-                    "role": "assistant", 
+                    "role": "assistant",
                     "message": f"❌ {error_msg}"
                 })
+                simpan_chat_ke_file({
+                    "timestamp": timestamp,
+                    "username": username,
+                    "query": query,
+                    "response": f"❌ {error_msg}",
+                    "sources": []
+                }, username)
+
