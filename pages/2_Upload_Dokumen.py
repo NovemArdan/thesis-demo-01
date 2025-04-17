@@ -20,7 +20,7 @@ with st.sidebar:
     username = st.session_state.get("username", "Tidak diketahui")
     st.markdown(f"**Akun:** `{username}`")
     if st.button("Logout"):
-        for key in ["logged_in", "username", "role", "messages", "rag_engine", "db_initialized"]:
+        for key in ["logged_in", "username", "role", "rag_engine", "db_initialized", "history","chat_history"]:
             st.session_state.pop(key, None)
         st.experimental_set_query_params(page="login")
         st.rerun()

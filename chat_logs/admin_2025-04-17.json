@@ -1,217 +1,470 @@
 [
   {
-    "timestamp": "2025-04-17T12:14:19.286994",
-    "username": "admin",
-    "query": "apa itu kereta api?",
-    "response": "Kereta api adalah sarana perkeretaapian dengan tenaga gerak, baik berjalan sendiri maupun dirangkaikan dengan sarana perkeretaapian lainnya, yang akan ataupun sedang bergerak di jalan rel yang terkait dengan perjalanan kereta api.",
+    "role": "user",
+    "content": "kai",
+    "timestamp": "2025-04-17T14:55:01.372449",
+    "msg_id": "f7a9b95131835d4431a169c65af08834"
+  },
+  {
+    "role": "assistant",
+    "content": "PT Kereta Api Indonesia (Persero) adalah perusahaan yang memiliki sejarah panjang dalam pengembangan sistem perkeretaapian di Indonesia. Didirikan pada tahun 1864, perusahaan ini telah mengalami berbagai perubahan nama dan struktur hingga akhirnya menjadi PT Kereta Api Indonesia (Persero) pada tahun 1998. Saat ini, perusahaan ini memiliki tujuh anak perusahaan/grup usaha yang bergerak di berbagai bidang terkait transportasi kereta api. Jika Anda memiliki pertanyaan lebih spesifik, silakan sampaikan kepada kami.",
+    "timestamp": "2025-04-17T14:55:04.094124",
+    "msg_id": "2a4ccdfd15cf03df82fa649af9464ec7",
+    "query": "kai",
     "sources": [
       {
         "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_1",
-        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.2393
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.3763
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "5",
+        "chunk_id": "SEJARAHKAI.pdf_5",
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.3868
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.4267
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "2",
         "chunk_id": "SEJARAHKAI.pdf_2",
         "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
-        "score": 0.267
+        "score": 0.4461
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.5089
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-17T14:55:26.593600"
+  },
+  {
+    "role": "user",
+    "content": "cuaca",
+    "timestamp": "2025-04-17T14:55:10.828325",
+    "msg_id": "da04f78640134a612a54ab6587a600ef"
+  },
+  {
+    "role": "assistant",
+    "content": "Maaf, informasi mengenai cuaca tidak terdapat dalam konteks yang diberikan. Saya tidak memiliki informasi mengenai cuaca.",
+    "timestamp": "2025-04-17T14:55:12.875592",
+    "msg_id": "6036467559baec3d6d385aa5ebb502ae",
+    "query": "cuaca",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.4917
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.4942
       },
       {
         "file": "UU23TH2007-HAL2.pdf",
         "page": "1",
         "chunk_id": "UU23TH2007-HAL2.pdf_0",
         "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
-        "score": 0.2676
+        "score": 0.5047
       },
       {
         "file": "SEJARAHKAI.pdf",
-        "page": "1",
-        "chunk_id": "SEJARAHKAI.pdf_0",
-        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/) \ue16a TENTANG KAMI (https://www.kai.id/corpo",
-        "score": 0.2997
-      },
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "3",
-        "chunk_id": "SEJARAHKAI.pdf_3",
-        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
-        "score": 0.3021
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-04-17T12:14:37.353204",
-    "username": "admin",
-    "query": "apa cuaca hari ini ?",
-    "response": "Maaf, saya tidak memiliki informasi mengenai cuaca hari ini. Anda dapat memeriksa cuaca hari ini melalui situs cuaca terpercaya atau aplikasi cuaca.",
-    "sources": [
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "4",
-        "chunk_id": "SEJARAHKAI.pdf_4",
-        "chunk_preview": "\ue0e6\n(http://\nfacebook.com/\nkeretaapikita)\n\ue192\n(http://\ntwitter.com/\nkeretaapikita)\n\uf167\n(http://\nyoutube.co",
-        "score": 0.4722
+        "page": "5",
+        "chunk_id": "SEJARAHKAI.pdf_5",
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.5137
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "2",
         "chunk_id": "SEJARAHKAI.pdf_2",
         "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
-        "score": 0.4779
-      },
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "1",
-        "chunk_id": "SEJARAHKAI.pdf_0",
-        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/) \ue16a TENTANG KAMI (https://www.kai.id/corpo",
-        "score": 0.4898
-      },
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_1",
-        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.4905
-      },
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "5",
-        "chunk_id": "SEJARAHKAI.pdf_5",
-        "chunk_preview": "\u00a9 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n\ue145 Email Korespondensi Kantor Pusat: do",
-        "score": 0.4916
+        "score": 0.5215
       }
-    ]
+    ],
+    "feedback": "NOT_OK",
+    "feedback_timestamp": "2025-04-17T14:55:28.099455"
   },
   {
-    "timestamp": "2025-04-17T12:14:41.443803",
-    "username": "admin",
-    "query": "siapa kamu ?",
-    "response": "Saya adalah asisten knowledge management perkeretaapian Indonesia.",
+    "role": "user",
+    "content": "tes",
+    "timestamp": "2025-04-17T14:55:46.832047",
+    "msg_id": "b270580eacc025650e1b5fd4904209b4"
+  },
+  {
+    "role": "assistant",
+    "content": "Maaf, saya tidak mengerti pertanyaan Anda. Bisakah Anda memberikan informasi lebih detail atau pertanyaan yang lebih spesifik?",
+    "timestamp": "2025-04-17T14:55:49.184225",
+    "msg_id": "3f5ef95a929b12bd4f8a9bc087d35d4c",
+    "query": "tes",
     "sources": [
       {
         "file": "SEJARAHKAI.pdf",
         "page": "1",
         "chunk_id": "SEJARAHKAI.pdf_0",
-        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/) \ue16a TENTANG KAMI (https://www.kai.id/corpo",
-        "score": 0.4625
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.5262
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.5304
+      },
+      {
+        "file": "UU23TH2007-HAL2.pdf",
+        "page": "1",
+        "chunk_id": "UU23TH2007-HAL2.pdf_0",
+        "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
+        "score": 0.5305
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "4",
         "chunk_id": "SEJARAHKAI.pdf_4",
-        "chunk_preview": "\ue0e6\n(http://\nfacebook.com/\nkeretaapikita)\n\ue192\n(http://\ntwitter.com/\nkeretaapikita)\n\uf167\n(http://\nyoutube.co",
-        "score": 0.4762
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.5311
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "5",
         "chunk_id": "SEJARAHKAI.pdf_5",
-        "chunk_preview": "\u00a9 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n\ue145 Email Korespondensi Kantor Pusat: do",
-        "score": 0.4816
-      },
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.5372
+      }
+    ],
+    "feedback": null,
+    "feedback_timestamp": null
+  },
+  {
+    "role": "user",
+    "content": "tahun berapa kai bernama PNKA?",
+    "timestamp": "2025-04-17T14:56:45.296125",
+    "msg_id": "503b9686cedeb4ee1fa6ac16aa40a50d"
+  },
+  {
+    "role": "assistant",
+    "content": "KAI berganti nama menjadi PNKA pada tahun 1950.",
+    "timestamp": "2025-04-17T14:56:46.798734",
+    "msg_id": "c427bba454fbd6f615d413e6d42601da",
+    "query": "tahun berapa kai bernama PNKA?",
+    "sources": [
       {
         "file": "SEJARAHKAI.pdf",
         "page": "2",
         "chunk_id": "SEJARAHKAI.pdf_2",
         "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
-        "score": 0.4827
+        "score": 0.3239
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.3573
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.3638
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "5",
+        "chunk_id": "SEJARAHKAI.pdf_5",
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.3788
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "2",
         "chunk_id": "SEJARAHKAI.pdf_1",
         "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.4976
+        "score": 0.409
       }
-    ]
+    ],
+    "feedback": null,
+    "feedback_timestamp": null
   },
   {
-    "timestamp": "2025-04-17T12:14:48.548564",
-    "username": "admin",
-    "query": "siapa presiden ke 7",
-    "response": "Saya tidak memiliki informasi mengenai presiden ke-7 dalam konteks sejarah perusahaan perkeretaapian Indonesia yang diberikan.",
+    "role": "user",
+    "content": "tahun 1864 - 1864 kai bernama siapa?",
+    "timestamp": "2025-04-17T14:57:13.963057",
+    "msg_id": "6d7e67c02afa1e96d7dd988e2882191e"
+  },
+  {
+    "role": "assistant",
+    "content": "Pada tahun 1864, PT Kereta Api Indonesia (Persero) belum ada. Pada tahun tersebut, perusahaan-perusahaan kereta api yang beroperasi di Indonesia antara lain Nederlansch Indische Spoorweg Maatschappij (NISM), Staatssporwegen (SS), Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS), Madoera Stoomtram Maatschappij (Mad.SM), Malang Stoomtram Maatschappij (MS), Modjokerto Stoomtram Maatschappij (MSM), Probolinggo Stoomtram Maatschappij (Pb.SM), Kediri Stoomtram Maatschappij (KSM), Pasoeroean Stoomtram Maatschappij (Ps.SM), Oost Java Stoomtram Maatschappij (OJS), dan lain-lain.",
+    "timestamp": "2025-04-17T14:57:19.172680",
+    "msg_id": "863cb3c51d73788d794f5e475f726f90",
+    "query": "tahun 1864 - 1864 kai bernama siapa?",
     "sources": [
       {
         "file": "SEJARAHKAI.pdf",
         "page": "3",
         "chunk_id": "SEJARAHKAI.pdf_3",
         "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
-        "score": 0.4545
+        "score": 0.3743
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "1",
         "chunk_id": "SEJARAHKAI.pdf_0",
-        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/) \ue16a TENTANG KAMI (https://www.kai.id/corpo",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.3815
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_2",
+        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
+        "score": 0.4094
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_1",
+        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
+        "score": 0.421
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.4546
+      }
+    ],
+    "feedback": null,
+    "feedback_timestamp": null
+  },
+  {
+    "role": "user",
+    "content": "Rikuyu Sokyoku tahun berapa sampai berapa?",
+    "timestamp": "2025-04-17T14:57:47.681811",
+    "msg_id": "c40a2c483d512594694d32e1b1cfaf99"
+  },
+  {
+    "role": "assistant",
+    "content": "Rikuyu Sokyoku berlangsung dari tahun 1942 hingga tahun 1945.",
+    "timestamp": "2025-04-17T14:57:49.259748",
+    "msg_id": "aa625a93fedfe444390b2b4ee3d94302",
+    "query": "Rikuyu Sokyoku tahun berapa sampai berapa?",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_1",
+        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
+        "score": 0.4315
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.4336
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.4495
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_2",
+        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
         "score": 0.457
       },
       {
-        "file": "UU23TH2007-HAL2.pdf",
-        "page": "1",
-        "chunk_id": "UU23TH2007-HAL2.pdf_0",
-        "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
-        "score": 0.4619
-      },
-      {
         "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_2",
-        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
-        "score": 0.47
-      },
-      {
-        "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_1",
-        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.4777
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.493
       }
-    ]
+    ],
+    "feedback": null,
+    "feedback_timestamp": null
   },
   {
-    "timestamp": "2025-04-17T12:15:04.593595",
-    "username": "admin",
-    "query": "siapa nama direktur kai sekarang?",
-    "response": "Maaf, informasi tentang nama direktur PT Kereta Api Indonesia (Persero) saat ini tidak terdapat dalam konteks yang diberikan. Anda dapat menghubungi kantor pusat PT Kereta Api Indonesia (Persero) untuk informasi lebih lanjut.",
+    "role": "user",
+    "content": "hai",
+    "timestamp": "2025-04-17T15:02:07.990751",
+    "msg_id": "d66e78b7f5016a68751dc4ff68a94930"
+  },
+  {
+    "role": "assistant",
+    "content": "Halo! Ada yang bisa saya bantu?",
+    "timestamp": "2025-04-17T15:02:09.703725",
+    "msg_id": "a0126555abf2dae133e5db595a03ab1c",
+    "query": "hai",
     "sources": [
       {
         "file": "SEJARAHKAI.pdf",
-        "page": "5",
-        "chunk_id": "SEJARAHKAI.pdf_5",
-        "chunk_preview": "\u00a9 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n\ue145 Email Korespondensi Kantor Pusat: do",
-        "score": 0.3621
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.5031
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "1",
         "chunk_id": "SEJARAHKAI.pdf_0",
-        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/) \ue16a TENTANG KAMI (https://www.kai.id/corpo",
-        "score": 0.3736
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.5154
       },
       {
         "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_2",
-        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
-        "score": 0.3745
+        "page": "5",
+        "chunk_id": "SEJARAHKAI.pdf_5",
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.524
       },
       {
-        "file": "SEJARAHKAI.pdf",
-        "page": "4",
-        "chunk_id": "SEJARAHKAI.pdf_4",
-        "chunk_preview": "\ue0e6\n(http://\nfacebook.com/\nkeretaapikita)\n\ue192\n(http://\ntwitter.com/\nkeretaapikita)\n\uf167\n(http://\nyoutube.co",
-        "score": 0.389
+        "file": "UU23TH2007-HAL2.pdf",
+        "page": "1",
+        "chunk_id": "UU23TH2007-HAL2.pdf_0",
+        "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
+        "score": 0.5328
       },
       {
         "file": "SEJARAHKAI.pdf",
         "page": "3",
         "chunk_id": "SEJARAHKAI.pdf_3",
         "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
-        "score": 0.418
+        "score": 0.5342
       }
-    ]
+    ],
+    "feedback": null,
+    "feedback_timestamp": null
+  },
+  {
+    "role": "user",
+    "content": "saya butuh jawaban",
+    "timestamp": "2025-04-17T15:02:15.757682",
+    "msg_id": "684859f9ae99202ce9524c5c70e3786e"
+  },
+  {
+    "role": "assistant",
+    "content": "Silahkan berikan pertanyaan yang ingin Anda tanyakan terkait informasi yang telah disediakan.",
+    "timestamp": "2025-04-17T15:02:17.721204",
+    "msg_id": "651ee038923195e47acbc17709b1fe21",
+    "query": "saya butuh jawaban",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.4472
+      },
+      {
+        "file": "UU23TH2007-HAL2.pdf",
+        "page": "1",
+        "chunk_id": "UU23TH2007-HAL2.pdf_0",
+        "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
+        "score": 0.4636
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_1",
+        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
+        "score": 0.4879
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_2",
+        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
+        "score": 0.4906
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.4923
+      }
+    ],
+    "feedback": "NOT_OK",
+    "feedback_timestamp": "2025-04-17T15:02:38.537877"
+  },
+  {
+    "role": "user",
+    "content": "info apa yang dimiliki?",
+    "timestamp": "2025-04-17T15:02:25.774328",
+    "msg_id": "33d4d3380998e63bfa1f6f83585e6590"
+  },
+  {
+    "role": "assistant",
+    "content": "Perusahaan PT Kereta Api Indonesia (Persero) memiliki informasi sejarah perkeretaapian di Indonesia, struktur perusahaan, anak perusahaan/grup usaha, dan kontak informasi seperti alamat kantor pusat, email korespondensi, dan layanan pelanggan.",
+    "timestamp": "2025-04-17T15:02:28.365220",
+    "msg_id": "42e158ac86c77b9d7b4cdebee79de58e",
+    "query": "info apa yang dimiliki?",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "3",
+        "chunk_id": "SEJARAHKAI.pdf_3",
+        "chunk_preview": "Ringkasan Sejarah Perusahaan Perkeretaapian Indonesia\nPeriode Perusahaan Dasar Hukum\n1864 - 1864 Ned",
+        "score": 0.4179
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "4",
+        "chunk_id": "SEJARAHKAI.pdf_4",
+        "chunk_preview": "\n(http://\nfacebook.com/\nkeretaapikita)\n\n(http://\ntwitter.com/\nkeretaapikita)\n\n(http://\nyoutube.co",
+        "score": 0.4297
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "1",
+        "chunk_id": "SEJARAHKAI.pdf_0",
+        "chunk_preview": "S SE EK KI IL LA AS S  K KA AI I\nHOME (https://www.kai.id/)  TENTANG KAMI (https://www.kai.id/corpo",
+        "score": 0.4417
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_2",
+        "chunk_preview": "(kini diperingati sebagai Hari Kereta Api Indonesia). Hal ini sekaligus menandai berdirinya Djawatan",
+        "score": 0.442
+      },
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "5",
+        "chunk_id": "SEJARAHKAI.pdf_5",
+        "chunk_preview": "© 2025 PT KERETA API INDONESIA (PERSERO), All Rights Reserved\n Email Korespondensi Kantor Pusat: do",
+        "score": 0.453
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-17T15:02:37.550698"
   }
 ]

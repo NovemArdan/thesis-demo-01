@@ -24,7 +24,7 @@ def login_page():
             st.session_state.logged_in = True
             st.session_state.username = username
             st.session_state.role = user[0]
-            st.experimental_set_query_params()
+            st.query_params.clear()
             st.success(f"Login berhasil sebagai {user[0]}")
             st.rerun()
         else:

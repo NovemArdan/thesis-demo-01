@@ -1,182 +1,107 @@
 import streamlit as st
+import os, json, hashlib
 from datetime import datetime
-import os
-import json
 
-
-# Import your RAG engine from the appropriate module
-# from rag_engine import RAGEngine  # Uncomment and adjust the import path
-
-st.set_page_config(page_title="Chat dengan Dokumen", layout="wide")
+st.set_page_config(page_title="Chatbot KMS", layout="wide")
 st.title("💬 Chatbot KMS")
-
-# Initialize RAG engine if not in session state
-if "rag_engine" not in st.session_state:
-    # Uncomment and use the actual import path for your RAGEngine
-    # from rag_engine import RAGEngine
-    # st.session_state.rag_engine = RAGEngine(
-    #     persist_directory="./chroma_db",
-    #     reset_db=False
-    # )
-    pass  # Remove this line when you uncomment the above
 
 # Cek login
 if not st.session_state.get("logged_in"):
-    st.experimental_set_query_params(page="login")
+    st.query_params.clear()
     st.stop()
 
-def simpan_chat_ke_file(entry, username):
-    import json
-    os.makedirs("chat_logs", exist_ok=True)
+username = st.session_state.get("username", "anon")
+os.makedirs("chat_logs", exist_ok=True)
+
+def get_message_id(index, role, content):
+    return hashlib.md5(f"{index}-{role}-{content[:50]}".encode()).hexdigest()
+
+def get_chat_log_filename():
     tanggal = datetime.now().strftime("%Y-%m-%d")
-    filename = f"chat_logs/{username}_{tanggal}.json"
+    return f"chat_logs/{username}_{tanggal}.json"
 
-    history = []
-    if os.path.exists(filename):
-        try:
-            with open(filename, "r") as f:
-                content = f.read().strip()
-                if content:
-                    history = json.loads(content)
-        except Exception as e:
-            print(f"❌ Gagal membaca file JSON lama: {e}")
-            history = []
+def simpan_chat_log():
+    with open(get_chat_log_filename(), "w", encoding="utf-8") as f:
+        json.dump(st.session_state.history, f, indent=2, ensure_ascii=False)
 
-    history.append(entry)
+def save_feedback(index):
+    msg = st.session_state.history[index]
+    feedback_value = st.session_state.get(f"feedback_{index}")
+    msg["feedback"] = "OK" if feedback_value == 1 else "NOT_OK"
+    msg["feedback_timestamp"] = datetime.now().isoformat()
+    simpan_chat_log()
 
-    with open(filename, "w") as f:
-        json.dump(history, f, indent=2)
+# Inisialisasi histori
+if "history" not in st.session_state:
+    st.session_state.history = []
 
+# Tampilkan histori dan feedback
+for i, message in enumerate(st.session_state.history):
+    with st.chat_message(message["role"]):
+        st.write(message["content"])
+        if message["role"] == "assistant":
+            feedback_val = message.get("feedback")
+            st.session_state[f"feedback_{i}"] = 1 if feedback_val == "OK" else 0 if feedback_val == "NOT_OK" else None
+            st.feedback(
+                "thumbs",
+                key=f"feedback_{i}",
+                on_change=save_feedback,
+                args=[i],
+                disabled=feedback_val is not None
+            )
 
-# Tombol Logout
-with st.sidebar:
-    username = st.session_state.get("username", "Tidak diketahui")
-    st.markdown(f"**Akun:** `{username}`")
-    if st.button("Logout"):
-        for key in ["logged_in", "username", "role", "messages", "rag_engine", "db_initialized", "chat_history", "last_sources"]:
-            st.session_state.pop(key, None)
-        st.experimental_set_query_params(page="login")
-        st.stop()
-
-# Verifikasi status database sebelum menampilkan chat
-rag = st.session_state.get("rag_engine")
-db_initialized = st.session_state.get("db_initialized", False)
-
-# Debug info
-with st.sidebar:
-    if st.checkbox("Tampilkan Debug Info"):
-        st.write("Debug Information:")
-        st.write(f"- DB Initialized: {db_initialized}")
-        
-        if rag:
-            try:
-                docs = rag.vectorstore.get()
-                doc_count = len(docs.get("documents", []))
-                st.write(f"- Jumlah dokumen di DB: {doc_count}")
-                
-                file_counts = rag.list_indexed_files()
-                if file_counts:
-                    st.write("Dokumen terindeks:")
-                    for file, count in file_counts.items():
-                        st.write(f"  - {file}: {count} chunks")
-                else:
-                    st.write("Tidak ada dokumen terindeks")
-            except Exception as e:
-                st.write(f"Error saat mengambil info: {str(e)}")
-        else:
-            st.write("- RAG Engine belum diinisialisasi")
-
-# Cek dokumen
-if not db_initialized:
-    st.warning("⚠️ Belum ada dokumen yang terindeks. Silakan upload dan proses dokumen terlebih dahulu.")
-    
-    if st.button("🔄 Cek ulang status database"):
-        if rag:
-            try:
-                docs = rag.vectorstore.get()
-                doc_count = len(docs.get("documents", []))
-                if doc_count > 0:
-                    st.session_state.db_initialized = True
-                    st.success(f"✅ Database berisi {doc_count} chunks!")
-                    st.rerun()
-                else:
-                    st.error("Database kosong. Silakan upload dan indeks dokumen.")
-            except Exception as e:
-                st.error(f"Error: {e}")
-    st.stop()
-
-# Simpan chat history
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
-
-# Simpan sumber terakhir agar bisa dipakai di luar spinner
-if "last_sources" not in st.session_state:
-    st.session_state.last_sources = []
-
-# Tampilkan chat sebelumnya
-for chat in st.session_state.chat_history:
-    with st.chat_message(chat["role"]):
-        st.markdown(chat["message"])
-
-# Input pengguna
-query = st.chat_input("Tanyakan sesuatu berdasarkan dokumen...")
-
-if query:
-    timestamp = datetime.now().isoformat()
-    username = st.session_state.get("username", "anon")
+# Tangani input baru
+if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
+    # Simpan pesan user
+    user_msg = {
+        "role": "user",
+        "content": prompt,
+        "timestamp": datetime.now().isoformat(),
+        "msg_id": get_message_id(len(st.session_state.history), "user", prompt)
+    }
+    st.session_state.history.append(user_msg)
 
     with st.chat_message("user"):
-        st.markdown(query)
-    st.session_state.chat_history.append({"role": "user", "message": query})
+        st.write(prompt)
 
     with st.chat_message("assistant"):
-        with st.spinner("🔍 Mencari jawaban dari dokumen..."):
+        with st.spinner("📚 Mencari jawaban dari dokumen..."):
             try:
                 rag = st.session_state.get("rag_engine")
                 if not rag:
-                    raise ValueError("RAG Engine tidak tersedia")
+                    raise ValueError("❌ RAG Engine belum tersedia")
 
-                response = rag.query(query, debug=True)
-                answer_text = response.get("result", "Maaf, tidak dapat memberikan jawaban.")
-                st.markdown(answer_text)
+                result = rag.query(prompt, debug=True)
+                answer = result.get("result", "Maaf, tidak ada jawaban.")
+                sources = result.get("formatted_sources", [])
 
-                # Tampilkan dan simpan sumber jika ada
-                formatted_sources = response.get("formatted_sources", [])
-                st.session_state.last_sources = formatted_sources
+                # Tambahan log ke terminal
+                print("\n📄 Daftar Chunk & Skor Similarity:")
+                for i, src in enumerate(sources):
+                    file = src.get("file", "-")
+                    page = src.get("page", "-")
+                    score = round(src.get("score", 0), 4)
+                    preview = src.get("chunk_preview", "").strip().replace("\n", " ")[:100]
+                    print(f"{i+1}. [{score}] {file} (hal. {page}) → {preview}...")
 
-                if formatted_sources:
-                    with st.expander("Sumber Referensi"):
-                        for i, src in enumerate(formatted_sources):
-                            st.markdown(f"**{i+1}. {src['file']}** (Halaman {src['page']}) - Skor: {src['score']}")
-                            st.text(src['chunk_preview'] + "...")
-                            st.divider()
 
-                st.session_state.chat_history.append({
+                # Tampilkan jawaban
+                st.write(answer)
+
+                assistant_msg = {
                     "role": "assistant",
-                    "message": answer_text
-                })
+                    "content": answer,
+                    "timestamp": datetime.now().isoformat(),
+                    "msg_id": get_message_id(len(st.session_state.history), "assistant", answer),
+                    "query": prompt,
+                    "sources": sources,
+                    "feedback": None,
+                    "feedback_timestamp": None
+                }
+                st.session_state.history.append(assistant_msg)
+                simpan_chat_log()
+                st.rerun()
 
-                # ⏺️ Simpan log ke file
-                simpan_chat_ke_file({
-                    "timestamp": timestamp,
-                    "username": username,
-                    "query": query,
-                    "response": answer_text,
-                    "sources": formatted_sources
-                }, username)
 
             except Exception as e:
-                error_msg = f"Terjadi kesalahan: {str(e)}"
-                st.error(error_msg)
-                st.session_state.chat_history.append({
-                    "role": "assistant",
-                    "message": f"❌ {error_msg}"
-                })
-                simpan_chat_ke_file({
-                    "timestamp": timestamp,
-                    "username": username,
-                    "query": query,
-                    "response": f"❌ {error_msg}",
-                    "sources": []
-                }, username)
-
+                st.error(f"Terjadi error: {e}")

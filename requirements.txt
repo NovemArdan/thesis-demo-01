@@ -9,3 +9,4 @@ pytest==7.4.2
 pytest-cov==4.1.0
 pypdf==3.16.2
 unstructured[pdf]
+ragas
