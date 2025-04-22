@@ -1,0 +1,210 @@
+[
+  {
+    "role": "user",
+    "content": "Kereta api menurut jenisnya terdiri dari?",
+    "timestamp": "2025-04-22T13:20:50.788177",
+    "msg_id": "a465b1483c117ead95a1a91385e8423d"
+  },
+  {
+    "role": "assistant",
+    "content": "Beberapa jenis kereta api yang ada adalah kereta api monorel, kereta api motor induksi linear, kereta api gerak udara, kereta api levitasi magnetik, trem, dan kereta gantung.",
+    "timestamp": "2025-04-22T13:20:54.725082",
+    "msg_id": "c51cfbe78956fd8a9a52294d0e44ee8c",
+    "query": "Jenis-jenis kereta api apa saja yang ada?",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_1",
+        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
+        "score": 0.282
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "3",
+        "chunk_id": "UU23TH2007.pdf_2",
+        "chunk_preview": "-  3  -\n6. Jalur kereta api khusus adalah jalur kereta api yang\ndigunakan secara khusus oleh badan u",
+        "score": 0.2836
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "20",
+        "chunk_id": "UU23TH2007.pdf_19",
+        "chunk_preview": "-  20  -\n(3) Penyambungan jalur kereta api khusus pada jaringan jalur\nkereta api umum dan jalur kere",
+        "score": 0.3013
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "75",
+        "chunk_id": "UU23TH2007.pdf_74",
+        "chunk_preview": "-  5  -\n Huruf c\nYang dimaksud dengan “kereta api monorel” adalah kereta api\nyang bergerak pada 1 (s",
+        "score": 0.3029
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "74",
+        "chunk_id": "UU23TH2007.pdf_73",
+        "chunk_preview": "-  4  -\n Huruf i\nYang dimaksud dengan “asas berkelanjutan” adalah bahwa\npenyelenggaraan perkeretaapi",
+        "score": 0.3102
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:23:08.832757"
+  },
+  {
+    "role": "user",
+    "content": "bukannya ada 8?",
+    "timestamp": "2025-04-22T13:21:26.337234",
+    "msg_id": "cbf9e03dd84b7993bfd3b7e2c92bbd37"
+  },
+  {
+    "role": "assistant",
+    "content": "Jenis-jenis kereta api yang ada adalah:\n1. Kereta api kecepatan normal\n2. Kereta api kecepatan tinggi\n3. Kereta api monorel\n4. Kereta api motor induksi linear\n5. Kereta api gerak udara\n6. Kereta api levitasi magnetik\n7. Trem\n8. Kereta gantung",
+    "timestamp": "2025-04-22T13:21:30.453404",
+    "msg_id": "20b935947e9aedecc91c2de1689ac149",
+    "query": "Apakah jenis-jenis kereta api yang ada?",
+    "sources": [
+      {
+        "file": "SEJARAHKAI.pdf",
+        "page": "2",
+        "chunk_id": "SEJARAHKAI.pdf_1",
+        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
+        "score": 0.2849
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "3",
+        "chunk_id": "UU23TH2007.pdf_2",
+        "chunk_preview": "-  3  -\n6. Jalur kereta api khusus adalah jalur kereta api yang\ndigunakan secara khusus oleh badan u",
+        "score": 0.2932
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "75",
+        "chunk_id": "UU23TH2007.pdf_74",
+        "chunk_preview": "-  5  -\n Huruf c\nYang dimaksud dengan “kereta api monorel” adalah kereta api\nyang bergerak pada 1 (s",
+        "score": 0.3029
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "5",
+        "chunk_id": "UU23TH2007.pdf_4",
+        "chunk_preview": "-  5  -\nBAB III\n TATANAN PERKERETAAPIAN\nPasal 4\nKereta api menurut jenisnya terdiri dari:\na.  kereta",
+        "score": 0.305
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "74",
+        "chunk_id": "UU23TH2007.pdf_73",
+        "chunk_preview": "-  4  -\n Huruf i\nYang dimaksud dengan “asas berkelanjutan” adalah bahwa\npenyelenggaraan perkeretaapi",
+        "score": 0.3075
+      }
+    ],
+    "feedback": "NOT_OK",
+    "feedback_timestamp": "2025-04-22T13:23:09.913816"
+  },
+  {
+    "role": "user",
+    "content": "apa rRencana induk perkeretaapian provins?",
+    "timestamp": "2025-04-22T13:22:13.790389",
+    "msg_id": "b07961594758a6f7aea3cbcbc5931cc6"
+  },
+  {
+    "role": "assistant",
+    "content": "Rencana Induk Perkeretaapian Provinsi yang dimaksud adalah rencana pengembangan jaringan prasarana perkeretaapian yang menghubungkan antarpusat kegiatan provinsi serta antara pusat kegiatan provinsi dan pusat kegiatan kabupaten/kota. Ini termasuk arah kebijakan, prakiraan perpindahan orang dan/atau barang, rencana kebutuhan prasarana dan sarana perkeretaapian provinsi, serta rencana kebutuhan sumber daya manusia.",
+    "timestamp": "2025-04-22T13:22:17.688460",
+    "msg_id": "314d63bbab6eb4fe09ef85f601d493b8",
+    "query": "Apa rencana Induk Perkeretaapian Provinsi yang dimaksud?",
+    "sources": [
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "7",
+        "chunk_id": "UU23TH2007.pdf_6",
+        "chunk_preview": "-  7  -\na.  rencana tata ruang wilayah nasional;\nb.  rencana tata ruang wilayah provinsi;\nc.  rencan",
+        "score": 0.2457
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "8",
+        "chunk_id": "UU23TH2007.pdf_7",
+        "chunk_preview": "-  8  -\na. arah kebijakan dan peranan perkeretaapian\nkabupaten/kota dalam keseluruhan moda\ntransport",
+        "score": 0.2465
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "77",
+        "chunk_id": "UU23TH2007.pdf_76",
+        "chunk_preview": "-  7  -\nPasal 7\n Ayat (1)\nYang dimaksud dengan “rencana induk perkeretaapian” adalah\nrencana pengemb",
+        "score": 0.2478
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "6",
+        "chunk_id": "UU23TH2007.pdf_5",
+        "chunk_preview": "-  6  -\n(3)  Sistem perkeretaapian sebagaimana dimaksud pada ayat\n(2) harus terintegrasi dengan moda",
+        "score": 0.2788
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "78",
+        "chunk_id": "UU23TH2007.pdf_77",
+        "chunk_preview": "-  8  -\nPasal 9\n Ayat (1)\n  Huruf a\n   Cukup jelas.\n  Huruf b\nYang dimaksud dengan “rencana tata rua",
+        "score": 0.2965
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:23:11.276904"
+  },
+  {
+    "role": "user",
+    "content": "apa saja yang meliputi Penyelenggaraan sarana perkeretaapian?",
+    "timestamp": "2025-04-22T13:22:46.475701",
+    "msg_id": "23bd4f16ec6a6e5b5636bf00e6a12c4b"
+  },
+  {
+    "role": "assistant",
+    "content": "Penyelenggaraan sarana perkeretaapian meliputi pembangunan prasarana, pengoperasian prasarana, perawatan prasarana, dan pengusahaan prasarana.",
+    "timestamp": "2025-04-22T13:22:50.112532",
+    "msg_id": "0a7f2abf22ec4c7e37f57d17d6e12f0b",
+    "query": "Apa saja yang meliputi Penyelenggaraan sarana perkeretaapian?",
+    "sources": [
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "56",
+        "chunk_id": "UU23TH2007.pdf_55",
+        "chunk_preview": "-  56  -\nPasal 169\n(1) Penyelenggara Sarana Perkeretaapian wajib\nmengasuransikan awak sarana perkere",
+        "score": 0.2588
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "10",
+        "chunk_id": "UU23TH2007.pdf_9",
+        "chunk_preview": "-  10  -\nPasal 15\nDalam melakukan pembinaan sebagaimana dimaksud dalam\nPasal 14, Pemerintah dan Peme",
+        "score": 0.2599
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "38",
+        "chunk_id": "UU23TH2007.pdf_37",
+        "chunk_preview": "-  38  -\nBagian Keempat\nAwak Sarana Perkeretaapian\nPasal 116\n(1)  Pengoperasian sarana perkeretaapia",
+        "score": 0.2619
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "13",
+        "chunk_id": "UU23TH2007.pdf_12",
+        "chunk_preview": "-  13  -\nPasal 28\nPenyelenggara Sarana Perkeretaapian yang mengoperasikan\nsarana perkeretaapian tida",
+        "score": 0.2648
+      },
+      {
+        "file": "UU23TH2007.pdf",
+        "page": "37",
+        "chunk_id": "UU23TH2007.pdf_36",
+        "chunk_preview": "-  37  -\nPasal 112\nApabila penyelenggara sarana perkeretaapian dalam\nmelaksanakan pemeriksaan tidak ",
+        "score": 0.2678
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:23:14.077259"
+  }
+]

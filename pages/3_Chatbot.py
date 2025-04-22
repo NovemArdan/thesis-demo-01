@@ -1,6 +1,7 @@
 import streamlit as st
 import os, json, hashlib
 from datetime import datetime
+from context_refiner import refine_question_with_history  # 👉 Impor modul baru
 
 st.set_page_config(page_title="Chatbot KMS", layout="wide")
 st.title("💬 Chatbot KMS")
@@ -52,7 +53,6 @@ for i, message in enumerate(st.session_state.history):
 
 # Tangani input baru
 if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
-    # Simpan pesan user
     user_msg = {
         "role": "user",
         "content": prompt,
@@ -65,17 +65,20 @@ if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
         st.write(prompt)
 
     with st.chat_message("assistant"):
-        with st.spinner("📚 Mencari jawaban dari dokumen..."):
+        with st.spinner("🔍 Memahami konteks pertanyaan..."):
             try:
                 rag = st.session_state.get("rag_engine")
                 if not rag:
                     raise ValueError("❌ RAG Engine belum tersedia")
 
-                result = rag.query(prompt, debug=True)
+                # 🎯 Gunakan context_refiner untuk pertanyaan context-aware
+                contextualized_prompt = refine_question_with_history(st.session_state.history[:-1], prompt)
+                st.markdown(f"**📌 Pertanyaan setelah dipahami konteks:** `{contextualized_prompt}`")
+
+                result = rag.query(contextualized_prompt, debug=True)
                 answer = result.get("result", "Maaf, tidak ada jawaban.")
                 sources = result.get("formatted_sources", [])
 
-                # Tambahan log ke terminal
                 print("\n📄 Daftar Chunk & Skor Similarity:")
                 for i, src in enumerate(sources):
                     file = src.get("file", "-")
@@ -84,8 +87,6 @@ if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
                     preview = src.get("chunk_preview", "").strip().replace("\n", " ")[:100]
                     print(f"{i+1}. [{score}] {file} (hal. {page}) → {preview}...")
 
-
-                # Tampilkan jawaban
                 st.write(answer)
 
                 assistant_msg = {
@@ -93,7 +94,7 @@ if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
                     "content": answer,
                     "timestamp": datetime.now().isoformat(),
                     "msg_id": get_message_id(len(st.session_state.history), "assistant", answer),
-                    "query": prompt,
+                    "query": contextualized_prompt,
                     "sources": sources,
                     "feedback": None,
                     "feedback_timestamp": None
@@ -101,7 +102,6 @@ if prompt := st.chat_input("Tanyakan sesuatu berdasarkan dokumen..."):
                 st.session_state.history.append(assistant_msg)
                 simpan_chat_log()
                 st.rerun()
-
 
             except Exception as e:
                 st.error(f"Terjadi error: {e}")
