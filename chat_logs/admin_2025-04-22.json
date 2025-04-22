@@ -1,210 +1,366 @@
 [
   {
     "role": "user",
-    "content": "Kereta api menurut jenisnya terdiri dari?",
-    "timestamp": "2025-04-22T13:20:50.788177",
-    "msg_id": "a465b1483c117ead95a1a91385e8423d"
+    "content": "apa itu SMKP?",
+    "timestamp": "2025-04-22T13:40:47.510702",
+    "msg_id": "a1a38d163bd0efcaa96a1b8e1d7d720c"
   },
   {
     "role": "assistant",
-    "content": "Beberapa jenis kereta api yang ada adalah kereta api monorel, kereta api motor induksi linear, kereta api gerak udara, kereta api levitasi magnetik, trem, dan kereta gantung.",
-    "timestamp": "2025-04-22T13:20:54.725082",
-    "msg_id": "c51cfbe78956fd8a9a52294d0e44ee8c",
-    "query": "Jenis-jenis kereta api apa saja yang ada?",
+    "content": "SMKP adalah singkatan dari Sistem Manajemen Keselamatan Perkeretaapian.",
+    "timestamp": "2025-04-22T13:40:51.724027",
+    "msg_id": "5d3fbce61d7a335fa11f8478ba689643",
+    "query": "Apa yang dimaksud dengan SMKP?",
     "sources": [
       {
-        "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_1",
-        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.282
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "6",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_5",
+        "chunk_preview": "-  6 -\n(3) Penyusunan, penerapan dan penyampaian laporan \npenerapan SMKP oleh masing-masing Penyelen",
+        "score": 0.317
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "3",
-        "chunk_id": "UU23TH2007.pdf_2",
-        "chunk_preview": "-  3  -\n6. Jalur kereta api khusus adalah jalur kereta api yang\ndigunakan secara khusus oleh badan u",
-        "score": 0.2836
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "7",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_6",
+        "chunk_preview": "-  7 -\np. audit internal SMKP; dan\nq. pengembangan keterampilan dan kemampuan SDM \nPerkeretaapian.\n(",
+        "score": 0.3178
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "20",
-        "chunk_id": "UU23TH2007.pdf_19",
-        "chunk_preview": "-  20  -\n(3) Penyambungan jalur kereta api khusus pada jaringan jalur\nkereta api umum dan jalur kere",
-        "score": 0.3013
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "27",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_26",
+        "chunk_preview": "-  27 -\nLAMPIRAN II\nPERATURAN MENTERI PERHUBUNGAN \nREPUBLIK INDONESIA \nNOMOR PM 69 TAHUN 2018 \nTENTA",
+        "score": 0.3285
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "75",
-        "chunk_id": "UU23TH2007.pdf_74",
-        "chunk_preview": "-  5  -\n Huruf c\nYang dimaksud dengan “kereta api monorel” adalah kereta api\nyang bergerak pada 1 (s",
-        "score": 0.3029
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "62",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_61",
+        "chunk_preview": "-  62 -\nC . KETENTUAN PENILAIAN HASIL AUDIT SMKP\n1 . Penilaian hasil Audit SMKP terdiri atas 3 (tiga",
+        "score": 0.3309
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "74",
-        "chunk_id": "UU23TH2007.pdf_73",
-        "chunk_preview": "-  4  -\n Huruf i\nYang dimaksud dengan “asas berkelanjutan” adalah bahwa\npenyelenggaraan perkeretaapi",
-        "score": 0.3102
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "57",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_56",
+        "chunk_preview": "-  57 -\n3. Penilaian Tingkat Lanjutan\npenilaian penerapan SMKP terhadap 229 (dua ratus dua puluh \nse",
+        "score": 0.3351
       }
     ],
     "feedback": "OK",
-    "feedback_timestamp": "2025-04-22T13:23:08.832757"
+    "feedback_timestamp": "2025-04-22T13:42:03.408676"
   },
   {
     "role": "user",
-    "content": "bukannya ada 8?",
-    "timestamp": "2025-04-22T13:21:26.337234",
-    "msg_id": "cbf9e03dd84b7993bfd3b7e2c92bbd37"
+    "content": "jelaskan",
+    "timestamp": "2025-04-22T13:40:56.361883",
+    "msg_id": "ee0088d78f0af48d98b05205da8f4ecd"
   },
   {
     "role": "assistant",
-    "content": "Jenis-jenis kereta api yang ada adalah:\n1. Kereta api kecepatan normal\n2. Kereta api kecepatan tinggi\n3. Kereta api monorel\n4. Kereta api motor induksi linear\n5. Kereta api gerak udara\n6. Kereta api levitasi magnetik\n7. Trem\n8. Kereta gantung",
-    "timestamp": "2025-04-22T13:21:30.453404",
-    "msg_id": "20b935947e9aedecc91c2de1689ac149",
-    "query": "Apakah jenis-jenis kereta api yang ada?",
+    "content": "SMKP adalah singkatan dari Sistem Manajemen Keselamatan Perkeretaapian. SMKP adalah suatu sistem yang digunakan untuk memastikan keselamatan dalam operasional perkeretaapian, termasuk dalam hal kebijakan keselamatan, pembuatan rencana keselamatan, pengendalian kontrak, pengendalian faktor manusia, pengelolaan dokumen, keselamatan operasional, manajemen tanggap darurat, komunikasi keselamatan, pelaporan potensi bahaya, dan pengelolaan pengangkutan material. Audit SMKP dilakukan untuk memastikan penerapan sistem ini sesuai dengan standar yang ditetapkan.",
+    "timestamp": "2025-04-22T13:41:00.589783",
+    "msg_id": "fdbbaffc72394020d7ea13933b102d3a",
+    "query": "Tolong jelaskan apa itu SMKP.",
     "sources": [
       {
-        "file": "SEJARAHKAI.pdf",
-        "page": "2",
-        "chunk_id": "SEJARAHKAI.pdf_1",
-        "chunk_preview": "Semarang Joana Stoomtram Maatschappij (SJS), Semarang Cheribon Stoomtram Maatschappij (SCS),\nSerajoe",
-        "score": 0.2849
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "62",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_61",
+        "chunk_preview": "-  62 -\nC . KETENTUAN PENILAIAN HASIL AUDIT SMKP\n1 . Penilaian hasil Audit SMKP terdiri atas 3 (tiga",
+        "score": 0.3591
       },
       {
-        "file": "UU23TH2007.pdf",
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "57",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_56",
+        "chunk_preview": "-  57 -\n3. Penilaian Tingkat Lanjutan\npenilaian penerapan SMKP terhadap 229 (dua ratus dua puluh \nse",
+        "score": 0.361
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "6",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_5",
+        "chunk_preview": "-  6 -\n(3) Penyusunan, penerapan dan penyampaian laporan \npenerapan SMKP oleh masing-masing Penyelen",
+        "score": 0.3611
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "27",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_26",
+        "chunk_preview": "-  27 -\nLAMPIRAN II\nPERATURAN MENTERI PERHUBUNGAN \nREPUBLIK INDONESIA \nNOMOR PM 69 TAHUN 2018 \nTENTA",
+        "score": 0.3676
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "7",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_6",
+        "chunk_preview": "-  7 -\np. audit internal SMKP; dan\nq. pengembangan keterampilan dan kemampuan SDM \nPerkeretaapian.\n(",
+        "score": 0.3678
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:42:08.106636"
+  },
+  {
+    "role": "user",
+    "content": "undang undang berapa ?",
+    "timestamp": "2025-04-22T13:41:07.830187",
+    "msg_id": "74a94d168a5ed7423c4141378273d3fc"
+  },
+  {
+    "role": "assistant",
+    "content": "Terdapat satu undang-undang yang terkait dengan Sistem Manajemen Keselamatan Perkeretaapian (SMKP), yaitu Peraturan Menteri Perhubungan Republik Indonesia Nomor PM 69 Tahun 2018.",
+    "timestamp": "2025-04-22T13:41:11.736979",
+    "msg_id": "fa800a966e7c23689f260511914ac85b",
+    "query": "Berapa undang-undang yang terkait dengan Sistem Manajemen Keselamatan Perkeretaapian (SMKP)?",
+    "sources": [
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "32",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_31",
+        "chunk_preview": "-  32 -\n2.2.3 manual SMKP mudah didapat oleh semua SDM \nPenyelenggara perkeretaapian sesuai kebutuha",
+        "score": 0.2429
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "27",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_26",
+        "chunk_preview": "-  27 -\nLAMPIRAN II\nPERATURAN MENTERI PERHUBUNGAN \nREPUBLIK INDONESIA \nNOMOR PM 69 TAHUN 2018 \nTENTA",
+        "score": 0.2513
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "10",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_9",
+        "chunk_preview": "-  10 -\nLAMPIRAN I\nPERATURAN MENTERI PERHUBUNGAN \nREPUBLIK INDONESIA \nNOMOR PM 69 TAHUN 2018 \nTENTAN",
+        "score": 0.2578
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "11",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_10",
+        "chunk_preview": "-11  -\ne. terdokumentasi dan terpelihara dengan baik;\nf. bersifat dinamik; dan\ng. ditinjau ulang sec",
+        "score": 0.2578
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "14",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_13",
+        "chunk_preview": "-  14 -\ng. sistem pertanggungjawaban\nsistem pertanggungjawaban harus ditetapkan dalam \npencapaian tu",
+        "score": 0.2595
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:41:27.623781"
+  },
+  {
+    "role": "user",
+    "content": "Peraturan Menteri Perhubungan Republik Indonesia Nomor PM 69 Tahun 2018 jelaskan",
+    "timestamp": "2025-04-22T13:41:32.041966",
+    "msg_id": "369250483f5b94f1a422b0a779f672e2"
+  },
+  {
+    "role": "assistant",
+    "content": "Peraturan Menteri Perhubungan Republik Indonesia Nomor PM 69 Tahun 2018 adalah tentang Sistem Manajemen Keselamatan Perkeretaapian. Peraturan ini diterbitkan untuk melaksanakan ketentuan Pasal 331 ayat (2), Pasal 346 ayat (4), dan Pasal 365 ayat (2) Peraturan Pemerintah Nomor 6 Tahun 2017 tentang Perubahan atas Peraturan Pemerintah Nomor 56 Tahun 2009 tentang Penyelenggaraan Perkeretaapian. Isi peraturan ini mencakup definisi perkeretaapian, kereta api, sistem manajemen keselamatan perkeretaapian, dan keselamatan perkeretaapian.",
+    "timestamp": "2025-04-22T13:41:39.214856",
+    "msg_id": "3753335ac88a2f7649620667f89a064f",
+    "query": "Tolong jelaskan Peraturan Menteri Perhubungan Republik Indonesia Nomor PM 69 Tahun 2018.",
+    "sources": [
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "1",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_0",
+        "chunk_preview": "MENTERI PERHUBUNGAN \nREPUBLIK INDONESIA\nPERATURAN MENTERI PERHUBUNGAN REPUBLIK INDONESIA\nNOMOR PM 69",
+        "score": 0.2415
+      },
+      {
+        "file": "PM_69_TAHUN_2018.pdf",
         "page": "3",
-        "chunk_id": "UU23TH2007.pdf_2",
-        "chunk_preview": "-  3  -\n6. Jalur kereta api khusus adalah jalur kereta api yang\ndigunakan secara khusus oleh badan u",
-        "score": 0.2932
+        "chunk_id": "PM_69_TAHUN_2018.pdf_2",
+        "chunk_preview": "-  3 -\n10. Peraturan Menteri Perhubungan Nomor\nPM 189 Tahun 2015 tentang Organisasi dan Tata Kerja \n",
+        "score": 0.2538
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "75",
-        "chunk_id": "UU23TH2007.pdf_74",
-        "chunk_preview": "-  5  -\n Huruf c\nYang dimaksud dengan “kereta api monorel” adalah kereta api\nyang bergerak pada 1 (s",
-        "score": 0.3029
+        "file": "PM_69_TAHUN_2018.pdf",
+        "page": "2",
+        "chunk_id": "PM_69_TAHUN_2018.pdf_1",
+        "chunk_preview": "-  2 -\n4. Undang-Undang Nomor 32 Tahun 2009 tentang \nPerlindungan dan Pengelolaan Lingkungan Hidup \n",
+        "score": 0.2784
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "5",
-        "chunk_id": "UU23TH2007.pdf_4",
-        "chunk_preview": "-  5  -\nBAB III\n TATANAN PERKERETAAPIAN\nPasal 4\nKereta api menurut jenisnya terdiri dari:\na.  kereta",
-        "score": 0.305
+        "file": "PP_No_56_2009.pdf",
+        "page": "137",
+        "chunk_id": "PP_No_56_2009.pdf_136",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 137 -\nAgar . . .\nBAB X\nKETENTUAN PENUTUP\nPasal 404\nPada saat mulai ber",
+        "score": 0.2806
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "74",
-        "chunk_id": "UU23TH2007.pdf_73",
-        "chunk_preview": "-  4  -\n Huruf i\nYang dimaksud dengan “asas berkelanjutan” adalah bahwa\npenyelenggaraan perkeretaapi",
-        "score": 0.3075
+        "file": "PP_No_56_2009.pdf",
+        "page": "139",
+        "chunk_id": "PP_No_56_2009.pdf_138",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\nPengaturan . . .\nPENJELASAN\nATAS\nPERATURAN PEMERINTAH REPUBLIK INDONESIA",
+        "score": 0.2834
+      }
+    ],
+    "feedback": "OK",
+    "feedback_timestamp": "2025-04-22T13:42:10.427242"
+  },
+  {
+    "role": "user",
+    "content": "cuaca",
+    "timestamp": "2025-04-22T13:44:24.430035",
+    "msg_id": "14f331a87b775aa20690b1cc46bcd7c9"
+  },
+  {
+    "role": "assistant",
+    "content": "Data lapangan meliputi data hujan, data gempa, dan data tanah.",
+    "timestamp": "2025-04-22T13:44:27.591427",
+    "msg_id": "3feda6b46c9388d0b4569ed219ef900e",
+    "query": "Apa yang dapat Anda katakan tentang cuaca?",
+    "sources": [
+      {
+        "file": "PP Nomor 33 Tahun 2021.pdf",
+        "page": "23",
+        "chunk_id": "PP Nomor 33 Tahun 2021.pdf_22",
+        "chunk_preview": "PRES IDEN\nREPUBLIK INDONESIA\n-5-\nAyat (21\nHuruf a\nCukup jelas.\nHuruf b\nCukup jelas.\nHuruf c\nCukup je",
+        "score": 0.4256
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "183",
+        "chunk_id": "PP_No_56_2009.pdf_184",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 45 -\nPasal 325 . . .\nHuruf c\nData lapangan meliputi data hujan, data g",
+        "score": 0.4274
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "140",
+        "chunk_id": "PP_No_56_2009.pdf_140",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 2 -\nAyat (2) . . .\nPengaturan mengenai penyelenggaraan prasarana perke",
+        "score": 0.4309
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "159",
+        "chunk_id": "PP_No_56_2009.pdf_159",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 21 -\nAyat (2) . . .\nAyat (3)\nCukup jelas.\nPasal 106\nCukup jelas.\nPasal",
+        "score": 0.4353
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "163",
+        "chunk_id": "PP_No_56_2009.pdf_163",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 25 -\nPasal 156 . . .\nPasal 147\nAyat (1)\nCukup jelas.\nAyat (2)\nHuruf a\n",
+        "score": 0.4367
       }
     ],
     "feedback": "NOT_OK",
-    "feedback_timestamp": "2025-04-22T13:23:09.913816"
+    "feedback_timestamp": "2025-04-22T13:44:39.201868"
   },
   {
     "role": "user",
-    "content": "apa rRencana induk perkeretaapian provins?",
-    "timestamp": "2025-04-22T13:22:13.790389",
-    "msg_id": "b07961594758a6f7aea3cbcbc5931cc6"
+    "content": "cuaca hari ini",
+    "timestamp": "2025-04-22T13:44:32.563260",
+    "msg_id": "fea7edcb2dc0c1aa5249e52a206253bc"
   },
   {
     "role": "assistant",
-    "content": "Rencana Induk Perkeretaapian Provinsi yang dimaksud adalah rencana pengembangan jaringan prasarana perkeretaapian yang menghubungkan antarpusat kegiatan provinsi serta antara pusat kegiatan provinsi dan pusat kegiatan kabupaten/kota. Ini termasuk arah kebijakan, prakiraan perpindahan orang dan/atau barang, rencana kebutuhan prasarana dan sarana perkeretaapian provinsi, serta rencana kebutuhan sumber daya manusia.",
-    "timestamp": "2025-04-22T13:22:17.688460",
-    "msg_id": "314d63bbab6eb4fe09ef85f601d493b8",
-    "query": "Apa rencana Induk Perkeretaapian Provinsi yang dimaksud?",
+    "content": "Maaf, informasi mengenai perkiraan cuaca tidak terdapat dalam konteks yang diberikan. Saya tidak tahu.",
+    "timestamp": "2025-04-22T13:44:35.582509",
+    "msg_id": "f39ef5dcabb589049309916b6a8bc22f",
+    "query": "Bagaimana perkiraan cuaca untuk hari ini?",
     "sources": [
       {
-        "file": "UU23TH2007.pdf",
-        "page": "7",
-        "chunk_id": "UU23TH2007.pdf_6",
-        "chunk_preview": "-  7  -\na.  rencana tata ruang wilayah nasional;\nb.  rencana tata ruang wilayah provinsi;\nc.  rencan",
-        "score": 0.2457
+        "file": "PP Nomor 33 Tahun 2021.pdf",
+        "page": "23",
+        "chunk_id": "PP Nomor 33 Tahun 2021.pdf_22",
+        "chunk_preview": "PRES IDEN\nREPUBLIK INDONESIA\n-5-\nAyat (21\nHuruf a\nCukup jelas.\nHuruf b\nCukup jelas.\nHuruf c\nCukup je",
+        "score": 0.432
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "183",
+        "chunk_id": "PP_No_56_2009.pdf_184",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 45 -\nPasal 325 . . .\nHuruf c\nData lapangan meliputi data hujan, data g",
+        "score": 0.4485
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "153",
+        "chunk_id": "PP_No_56_2009.pdf_153",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 15 -\nPasal 79 . . .\nAyat (3)\nCukup jelas.\nAyat (4)\nCukup jelas.\nPasal ",
+        "score": 0.4571
       },
       {
         "file": "UU23TH2007.pdf",
-        "page": "8",
-        "chunk_id": "UU23TH2007.pdf_7",
-        "chunk_preview": "-  8  -\na. arah kebijakan dan peranan perkeretaapian\nkabupaten/kota dalam keseluruhan moda\ntransport",
-        "score": 0.2465
+        "page": "91",
+        "chunk_id": "UU23TH2007.pdf_90",
+        "chunk_preview": "-  21  -\n  Huruf c\nYang dimaksud dengan “uji dinamis” adalah pengujian yang\ndilakukan untuk mengetah",
+        "score": 0.4581
       },
       {
-        "file": "UU23TH2007.pdf",
-        "page": "77",
-        "chunk_id": "UU23TH2007.pdf_76",
-        "chunk_preview": "-  7  -\nPasal 7\n Ayat (1)\nYang dimaksud dengan “rencana induk perkeretaapian” adalah\nrencana pengemb",
-        "score": 0.2478
-      },
-      {
-        "file": "UU23TH2007.pdf",
-        "page": "6",
-        "chunk_id": "UU23TH2007.pdf_5",
-        "chunk_preview": "-  6  -\n(3)  Sistem perkeretaapian sebagaimana dimaksud pada ayat\n(2) harus terintegrasi dengan moda",
-        "score": 0.2788
-      },
-      {
-        "file": "UU23TH2007.pdf",
-        "page": "78",
-        "chunk_id": "UU23TH2007.pdf_77",
-        "chunk_preview": "-  8  -\nPasal 9\n Ayat (1)\n  Huruf a\n   Cukup jelas.\n  Huruf b\nYang dimaksud dengan “rencana tata rua",
-        "score": 0.2965
+        "file": "PP_No_56_2009.pdf",
+        "page": "140",
+        "chunk_id": "PP_No_56_2009.pdf_140",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 2 -\nAyat (2) . . .\nPengaturan mengenai penyelenggaraan prasarana perke",
+        "score": 0.4634
       }
     ],
-    "feedback": "OK",
-    "feedback_timestamp": "2025-04-22T13:23:11.276904"
+    "feedback": "NOT_OK",
+    "feedback_timestamp": "2025-04-22T13:44:40.118129"
   },
   {
     "role": "user",
-    "content": "apa saja yang meliputi Penyelenggaraan sarana perkeretaapian?",
-    "timestamp": "2025-04-22T13:22:46.475701",
-    "msg_id": "23bd4f16ec6a6e5b5636bf00e6a12c4b"
+    "content": "apa itu perkeretaapian?",
+    "timestamp": "2025-04-22T13:53:38.940011",
+    "msg_id": "d81951919a73eebc5ccc4ac1f3f697ba"
   },
   {
     "role": "assistant",
-    "content": "Penyelenggaraan sarana perkeretaapian meliputi pembangunan prasarana, pengoperasian prasarana, perawatan prasarana, dan pengusahaan prasarana.",
-    "timestamp": "2025-04-22T13:22:50.112532",
-    "msg_id": "0a7f2abf22ec4c7e37f57d17d6e12f0b",
-    "query": "Apa saja yang meliputi Penyelenggaraan sarana perkeretaapian?",
+    "content": "Perkeretaapian adalah satu kesatuan sistem yang terdiri atas prasarana, sarana, dan sumber daya manusia, serta norma, kriteria, persyaratan, dan prosedur untuk penyelenggaraan transportasi kereta api.",
+    "timestamp": "2025-04-22T13:53:43.036993",
+    "msg_id": "59f84a18a167fae6c564f0b782f72406",
+    "query": "Apa itu perkeretaapian?",
     "sources": [
       {
-        "file": "UU23TH2007.pdf",
-        "page": "56",
-        "chunk_id": "UU23TH2007.pdf_55",
-        "chunk_preview": "-  56  -\nPasal 169\n(1) Penyelenggara Sarana Perkeretaapian wajib\nmengasuransikan awak sarana perkere",
-        "score": 0.2588
+        "file": "PP Nomor 33 Tahun 2021.pdf",
+        "page": "2",
+        "chunk_id": "PP Nomor 33 Tahun 2021.pdf_1",
+        "chunk_preview": "PRES IDEN\nREPUBLIK INDONESIA\n-2-\nBAB I\nKETENTUAN UMUM\nPasal 1\nDalam Peraturan Pemerintah ini yang di",
+        "score": 0.3049
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "2",
+        "chunk_id": "PP_No_56_2009.pdf_1",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n- 2 -\n13. Jaringan . . .\n2. Perkeretaapian umum adalah perkeret aapian y",
+        "score": 0.3119
       },
       {
         "file": "UU23TH2007.pdf",
-        "page": "10",
-        "chunk_id": "UU23TH2007.pdf_9",
-        "chunk_preview": "-  10  -\nPasal 15\nDalam melakukan pembinaan sebagaimana dimaksud dalam\nPasal 14, Pemerintah dan Peme",
-        "score": 0.2599
+        "page": "2",
+        "chunk_id": "UU23TH2007.pdf_1",
+        "chunk_preview": "-  2  -\nDengan Persetujuan Bersama\nDEWAN PERWAKILAN RAKYAT REPUBLIK INDONESIA\ndan\nPRESIDEN REPUBLIK ",
+        "score": 0.3195
+      },
+      {
+        "file": "PP_No_56_2009.pdf",
+        "page": "1",
+        "chunk_id": "PP_No_56_2009.pdf_0",
+        "chunk_preview": "PRESIDEN\nREPUBLIK INDONESIA\n2. Perkeretaapian . . .\nPERATURAN PEMERINTAH REPUBLIK INDONESIA\nNOMOR 56",
+        "score": 0.3283
       },
       {
         "file": "UU23TH2007.pdf",
-        "page": "38",
-        "chunk_id": "UU23TH2007.pdf_37",
-        "chunk_preview": "-  38  -\nBagian Keempat\nAwak Sarana Perkeretaapian\nPasal 116\n(1)  Pengoperasian sarana perkeretaapia",
-        "score": 0.2619
-      },
-      {
-        "file": "UU23TH2007.pdf",
-        "page": "13",
-        "chunk_id": "UU23TH2007.pdf_12",
-        "chunk_preview": "-  13  -\nPasal 28\nPenyelenggara Sarana Perkeretaapian yang mengoperasikan\nsarana perkeretaapian tida",
-        "score": 0.2648
-      },
-      {
-        "file": "UU23TH2007.pdf",
-        "page": "37",
-        "chunk_id": "UU23TH2007.pdf_36",
-        "chunk_preview": "-  37  -\nPasal 112\nApabila penyelenggara sarana perkeretaapian dalam\nmelaksanakan pemeriksaan tidak ",
-        "score": 0.2678
+        "page": "71",
+        "chunk_id": "UU23TH2007.pdf_70",
+        "chunk_preview": "PENJELASAN\nATAS\nUNDANG-UNDANG REPUBLIK INDONESIA\nNOMOR  23  TAHUN  2007\nTENTANG\n PERKERETAAPIAN\nI.  ",
+        "score": 0.3307
       }
     ],
-    "feedback": "OK",
-    "feedback_timestamp": "2025-04-22T13:23:14.077259"
+    "feedback": "NOT_OK",
+    "feedback_timestamp": "2025-04-22T13:53:45.838878"
   }
 ]
